@@ -4,8 +4,9 @@
 function Get-ColumnsDescription {
     [cmdletbinding()]
     param(
-    [string]$ServerInstance,
-    [string]$Database
+        [string]$ServerInstance,
+        [string]$Database,
+        [switch]$OutMd
     )
 
     Write-Verbose "Hello from Get-ColumnsDescription"
@@ -25,9 +26,21 @@ function Get-ColumnsDescription {
 
 
     $r=Invoke-SQLQuery -SqlInstance $ServerInstance -DatabaseName $Database -Query $query
-    Write-Output $r
-
-    
+    if ($OutMd.IsPresent)
+    {
+        $md="Columns description:"+ [System.Environment]::NewLine;
+        $md+="Table name|Column name|Description" + [System.Environment]::NewLine;
+        $md+="|----------|:-------------:|------:|" + [System.Environment]::NewLine;
+        foreach($item in $r){
+            $md+=$item.TableName+"|"+$item.Column+"|"+$item.Description+ [System.Environment]::NewLine;
+        }
+        $md|Out-File ColumnDescription.MD
+        Write-Output $md
+    }
+    else
+    {
+        Write-Output $r
+    }    
 }
 
   
