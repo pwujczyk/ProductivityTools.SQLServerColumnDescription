@@ -1,5 +1,6 @@
 <!--Category:react,firebase--> 
  <p align="right">
+  <a href="https://www.powershellgallery.com/packages/ProductivityTools.SQLServerColumnDescription/"><img src="Images/Header/Powershell_border_40px.png" /></a>
     <a href="http://productivitytools.tech/productivitytools-createsqlserverdatabase/"><img src="Images/Header/ProductivityTools_green_40px_2.png" /><a> 
     <a href="https://github.com/pwujczyk/ProductivityTools.Learning.ReactWithFirebaseAuthWithDb"><img src="Images/Header/Github_border_40px.png" /></a>
 </p>
@@ -65,5 +66,40 @@ GO
 
 ## Powershell module
 
+Module gets the description from the columns.
+```powershell
+Get-ColumnsDescription -Verbose -ServerInstance ".\SQL2019" -Database PTMeetings
+```
+![description](images/Description.png)
+
+If we use ```-outMD``` switch it will generate MD file
+
+```
+Get-ColumnsDescription -Verbose -ServerInstance ".\SQL2019" -Database PTMeetings -OutMd
+```
+
+Columns description:
+Table name|Column name|Description
+|----------|:-------------:|------:|
+dbo.VersionInfo|AppliedOn|
+dbo.VersionInfo|Description|
+dbo.VersionInfo|Version|
+jl.JournalItem|AfterNotes_old|
+jl.JournalItem|BeforeNotes_old|
+jl.JournalItem|Date|
+jl.JournalItem|Deleted|
+jl.JournalItem|DuringNotes_old|
+jl.JournalItem|JournalItemId|
+jl.JournalItem|Subject|
+jl.JournalItem|TreeId|
+mt.Tree|Deleted|
+mt.Tree|Name|
+mt.Tree|ParentId|
+mt.Tree|TreeId|
+jl.JournalItemNotes|JournalItemId|
+jl.JournalItemNotes|JournalItemNotesId|
+jl.JournalItemNotes|Notes|
+jl.JournalItemNotes|NotesType|Technical type of item notes, it could be empty or Slate
+jl.JournalItemNotes|Type|
 
 
