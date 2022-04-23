@@ -19,6 +19,6 @@ mt.Tree|TreeId|
 jl.JournalItemNotes|JournalItemId|
 jl.JournalItemNotes|JournalItemNotesId|
 jl.JournalItemNotes|Notes|
-jl.JournalItemNotes|NotesType|Type of notes could be Slate
+jl.JournalItemNotes|NotesType|Technical type of item notes, it could be empty or Slate
 jl.JournalItemNotes|Type|
 
