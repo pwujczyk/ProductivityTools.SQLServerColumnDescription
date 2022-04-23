@@ -1,6 +1,3 @@
-<#
-	My Function
-#>
 function Get-ColumnsDescription {
     [cmdletbinding()]
     param(
