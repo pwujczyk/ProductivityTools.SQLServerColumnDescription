@@ -70,6 +70,7 @@ Module gets the description from the columns.
 ```powershell
 Get-ColumnsDescription -Verbose -ServerInstance ".\SQL2019" -Database PTMeetings
 ```
+<!--og-image-->
 ![description](Images/Description.png)
 
 If we use ```-outMD``` switch it will generate MD file
